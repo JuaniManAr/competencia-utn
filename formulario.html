@@ -1,0 +1,243 @@
+<html>
+<head>
+  <title>Inscripción Competencia UTN</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <h1>Competencia de Programación 2026</h1>
+  <p>
+    Completá el formulario para inscribir a tu equipo.
+    Los campos con <b class="requerido">*</b> son obligatorios.
+  </p>
+
+  <hr>
+
+  <form action="#" method="post" enctype="multipart/form-data">
+
+    <fieldset>
+      <legend>Datos del Equipo</legend>
+
+      <p>
+        <label for="nombre-equipo">
+          Nombre del equipo <span class="requerido">*</span>
+        </label>
+        <br>
+        <input
+          type="text"
+          id="nombre-equipo"
+          name="nombre_equipo"
+          placeholder="Ej: ByteStormers"
+          minlength="3"
+          maxlength="30"
+          pattern="[A-Za-záéíóúÁÉÍÓÚñÑ0-9 _\-]{3,30}"
+          required
+        >
+        <br>
+        <span class="ayuda">Entre 3 y 30 caracteres.</span>
+      </p>
+
+      <p>
+        <label for="cant-integrantes">
+          Cantidad de integrantes <span class="requerido">*</span>
+        </label>
+        <br>
+        <input
+          type="number"
+          id="cant-integrantes"
+          name="cant_integrantes"
+          placeholder="Entre 2 y 4"
+          min="2"
+          max="4"
+          required
+        >
+        <br>
+        <span class="ayuda">Mínimo 2, máximo 4 personas.</span>
+      </p>
+
+      <p>
+        <label>Categoría <span class="requerido">*</span></label>
+        <br>
+        <label>
+          <input type="radio" name="categoria" value="principiante" required>
+          Principiante
+        </label>
+        <label>
+          <input type="radio" name="categoria" value="intermedio">
+          Intermedio
+        </label>
+        <label>
+          <input type="radio" name="categoria" value="avanzado">
+          Avanzado
+        </label>
+      </p>
+
+      <p>
+        <label for="logo-equipo">Logo del equipo</label>
+        <br>
+        <input
+          type="file"
+          id="logo-equipo"
+          name="logo_equipo"
+          accept="image/png, image/jpeg"
+        >
+        <br>
+        <span class="ayuda">Opcional. Solo PNG o JPEG.</span>
+      </p>
+
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+      <legend>Datos del Capitán</legend>
+
+      <p>
+        <label for="nombre-capitan">
+          Nombre completo <span class="requerido">*</span>
+        </label>
+        <br>
+        <input
+          type="text"
+          id="nombre-capitan"
+          name="nombre_capitan"
+          placeholder="Ej: Lucía Gómez"
+          pattern="[A-Za-záéíóúÁÉÍÓÚñÑ ]{2,80}"
+          title="Solo letras y espacios"
+          required
+        >
+        <br>
+        <span class="ayuda">Solo letras y espacios.</span>
+      </p>
+
+      <p>
+        <label for="legajo">
+          Legajo <span class="requerido">*</span>
+        </label>
+        <br>
+        <input
+          type="text"
+          id="legajo"
+          name="legajo"
+          placeholder="Ej: 12345"
+          pattern="\d{5}"
+          title="Exactamente 5 dígitos numéricos"
+          maxlength="5"
+          required
+        >
+        <br>
+        <span class="ayuda">Exactamente 5 dígitos numéricos.</span>
+      </p>
+
+      <p>
+        <label for="email">
+          Email <span class="requerido">*</span>
+        </label>
+        <br>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="usuario@utn.edu.ar"
+          required
+        >
+      </p>
+
+      <p>
+        <label for="telefono">Teléfono</label>
+        <br>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          placeholder="Ej: +54 351 000-0000"
+        >
+        <br>
+        <span class="ayuda">Opcional.</span>
+      </p>
+
+      <p>
+        <label for="carrera">
+          Carrera <span class="requerido">*</span>
+        </label>
+        <br>
+        <select id="carrera" name="carrera" required>
+          <option value="" disabled selected>-- Seleccioná tu carrera --</option>
+          <option value="sistemas">Ing. en Sistemas de Información</option>
+          <option value="industrial">Ing. Industrial</option>
+          <option value="civil">Ing. Civil</option>
+          <option value="electronica">Ing. Electrónica</option>
+          <option value="mecanica">Ing. Mecánica</option>
+          <option value="electrica">Ing. Eléctrica</option>
+          <option value="quimica">Ing. Química</option>
+        </select>
+      </p>
+
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+      <legend>Preferencias de Competencia</legend>
+
+      <p>
+        <label for="lenguaje">
+          Lenguaje de programación preferido <span class="requerido">*</span>
+        </label>
+        <br>
+        <input
+          type="text"
+          id="lenguaje"
+          name="lenguaje"
+          list="lenguajes-list"
+          placeholder="Ej: Python"
+          required
+        >
+        <datalist id="lenguajes-list">
+          <option value="Python">
+          <option value="Java">
+          <option value="C++">
+          <option value="JavaScript">
+          <option value="Go">
+          <option value="Rust">
+          <option value="Kotlin">
+          <option value="TypeScript">
+          <option value="C#">
+          <option value="Swift">
+        </datalist>
+        <br>
+        <span class="ayuda">Escribí o elegí de la lista.</span>
+      </p>
+
+      <p>
+        <label for="experiencia">Nivel de experiencia del equipo (1 al 10)</label>
+        <br>
+        <input
+          type="range"
+          id="experiencia"
+          name="experiencia"
+          min="1"
+          max="10"
+          value="5"
+          oninput="document.getElementById('exp-val').value = this.value"
+        >
+        <output id="exp-val" for="experiencia">5</output>
+        <br>
+        <span class="ayuda">1 = Principiante &nbsp;&nbsp; 10 = Experto</span>
+      </p>
+
+      <p>
+        <label>Conocimientos del equipo</label>
+        <br>
+        <label>
+          <input type="checkbox" name="conocimientos" value="algoritmos">
+          Algoritmos
+        </label>
+        <br>
+        <label>
+          <input type="checkbox" name="conocimientos" value="estructuras">
+          Estructuras de datos
+        </label>
+        <br>
+        <label>
+          <input type="checkbox" name="conocimi
